@@ -1,0 +1,68 @@
+/* shared/style.css */
+:root {
+    --primary: #6c5ce7;      /* Roxo moderno */
+    --bg-dark: #0f172a;      /* Fundo profundo */
+    --card-dark: #1e293b;    /* Fundo de cards e inputs */
+    --text-main: #f8fafc;    /* Texto claro */
+    --text-dim: #94a3b8;     /* Texto secundário */
+    --success: #10b981;      /* Verde para botões salvar */
+    --danger: #ef4444;       /* Vermelho para excluir */
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    background: var(--card-dark);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo-aura { color: var(--primary); font-weight: bold; }
+.logo-dash { color: var(--text-main); font-weight: lighter; }
+
+.input-group {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.input-group label { display: block; margin-bottom: 0.5rem; color: var(--text-dim); }
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+.auth-switch { margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-dim); }
+.auth-switch a { color: var(--primary); text-decoration: none; }
