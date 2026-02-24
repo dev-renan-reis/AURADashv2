@@ -1,85 +1,55 @@
 /* dashboard/style.css */
 
-/* Estrutura da Sidebar */
+/* Reset e Trava de Rolagem */
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    /* Remove rolagem da tela inteira */
+    display: flex;
+}
+
+/* Sidebar Ajustada */
 .sidebar {
     position: fixed;
     left: 0;
     top: 0;
     height: 100vh;
     width: 70px;
-    /* Largura fechada */
     background: var(--card-dark);
     display: flex;
     flex-direction: column;
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
     z-index: 1000;
     border-right: 1px solid #334155;
 }
 
 .sidebar:hover {
     width: 240px;
-    /* Largura aberta */
 }
 
-/* Cabeçalho da Sidebar (Logo) */
-.sidebar-header {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    padding: 0 23px;
-    /* Alinhado com os ícones */
-    color: var(--primary);
-}
-
-.logo-text {
-    margin-left: 20px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.2s;
-    pointer-events: none;
-}
-
-.sidebar:hover .logo-text {
-    opacity: 1;
-}
-
-/* Links de Navegação */
-.nav-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-grow: 1;
-}
-
+/* Força os ícones a aparecerem centralizados no modo fechado */
 .nav-links li a {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    /* Alinha ao início para manter o ícone fixo na esquerda */
     height: 50px;
     padding: 0 23px;
-    /* Centraliza o ícone de 24px dentro dos 70px */
+    /* Espaçamento exato para centralizar ícone de 24px em 70px */
     text-decoration: none;
     color: var(--text-dim);
-    transition: 0.2s;
     white-space: nowrap;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
-    background: rgba(108, 92, 231, 0.1);
-    color: var(--primary);
-    box-shadow: inset 3px 0 0 var(--primary);
-    /* Barrinha lateral igual GitHub */
-}
-
-/* Ícones e Texto */
-.nav-links li a i,
-.sidebar-footer a i {
+.nav-links li a i {
     min-width: 24px;
     width: 24px;
     height: 24px;
+    flex-shrink: 0;
+    /* Impede o ícone de amassar */
+    display: block !important;
+    /* Garante que o Lucide exiba o SVG */
 }
 
 .link-text {
@@ -92,46 +62,28 @@
     opacity: 1;
 }
 
-/* Rodapé da Sidebar */
-.sidebar-footer {
-    border-top: 1px solid #334155;
-    padding: 10px 0;
-}
-
-/* Ajuste do Conteúdo Principal */
+/* Conteúdo Principal com Scroll Interno Próprio */
 .main-content {
     margin-left: 70px;
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: auto;
+    /* Apenas o conteúdo central rola se necessário */
     padding: 2rem;
+    box-sizing: border-box;
     transition: margin-left 0.3s ease;
 }
 
-/* Cards do Dashboard */
 .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin-top: 2rem;
 }
 
 .card {
     background: var(--card-dark);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid #334155;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card i {
-    color: var(--primary);
-    margin-bottom: 1rem;
-}
-
-.stat {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: var(--text-main);
 }
