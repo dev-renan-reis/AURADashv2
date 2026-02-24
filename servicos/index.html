@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Serviços | AURADash</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <button onclick="window.location.href='../dashboard/index.html'">← Voltar</button>
+    <h1>Gestão de Serviços</h1>
+
+    <fieldset>
+        <legend>Novo Serviço</legend>
+        <form id="form-servico">
+            <input type="text" id="nome-servico" placeholder="Nome do Serviço (ex: Corte, Limpeza de Pele)"
+                required><br><br>
+            <input type="number" id="preco" placeholder="Preço (R$)" step="0.01" required><br><br>
+            <input type="number" id="duracao" placeholder="Duração (minutos)" required><br><br>
+
+            <button type="submit" id="btn-salvar">Cadastrar Serviço</button>
+            <button type="button" id="btn-cancelar" style="display:none;"
+                onclick="resetarFormulario()">Cancelar</button>
+        </form>
+    </fieldset>
+
+    <hr>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Serviço</th>
+                <th>Preço</th>
+                <th>Duração</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="corpo-tabela-servicos"></tbody>
+    </table>
+
+    <script src="../shared/config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
