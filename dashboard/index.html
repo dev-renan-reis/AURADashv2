@@ -3,69 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | AURADash</title>
-    <link rel="stylesheet" href="../shared/style.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>AURADash | Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
-<body class="dark-theme">
-    <nav class="sidebar">
-        <div class="sidebar-header">
-            <i data-lucide="sparkles" class="logo-icon"></i>
-            <span class="logo-text">AURA<span class="dash">Dash</span></span>
-        </div>
+<body>
+    <h1>Dashboard AURADash</h1>
+    <p>Bem-vindo: <span id="user-email">...</span></p>
 
-        <ul class="nav-links">
-            <li><a href="../dashboard/index.html" class="active"><i data-lucide="layout-dashboard"></i><span
-                        class="link-text">Dashboard</span></a></li>
-            <li><a href="../agenda/index.html"><i data-lucide="calendar"></i><span class="link-text">Agenda</span></a>
-            </li>
-            <li><a href="../profissionais/index.html"><i data-lucide="users"></i><span
-                        class="link-text">Equipe</span></a></li>
-            <li><a href="../servicos/index.html"><i data-lucide="scissors"></i><span
-                        class="link-text">Serviços</span></a></li>
-            <li><a href="../financas/index.html"><i data-lucide="dollar-sign"></i><span
-                        class="link-text">Finanças</span></a></li>
-            <li><a href="../configuracoes/index.html"><i data-lucide="settings"></i><span
-                        class="link-text">Configurações</span></a></li>
-        </ul>
-
-        <div class="sidebar-footer">
-            <a href="#" id="btn-logout"><i data-lucide="log-out"></i><span class="link-text">Sair</span></a>
-        </div>
+    <nav>
+        <button onclick="window.location.href='../agenda/index.html'">Agenda</button>
+        <button onclick="window.location.href='../profissionais/index.html'">Profissionais</button>
+        <button id="btn-logout">Sair (Logout)</button>
     </nav>
 
-    <main class="main-content">
-        <header class="top-bar">
-            <h2>Bem-vindo, <span id="user-name">Studio</span></h2>
-            <div class="date-display" id="current-date">--/--/----</div>
-        </header>
+    <hr>
 
-        <section class="dashboard-grid">
-            <div class="card">
-                <i data-lucide="calendar-check"></i>
-                <h3>Agendamentos Hoje</h3>
-                <p class="stat">0</p>
-            </div>
-            <div class="card">
-                <i data-lucide="trending-up"></i>
-                <h3>Faturamento Mensal</h3>
-                <p class="stat">R$ 0,00</p>
-            </div>
-            <div class="card">
-                <i data-lucide="user-plus"></i>
-                <h3>Novos Clientes</h3>
-                <p class="stat">0</p>
-            </div>
-        </section>
-    </main>
+    <h2>Resumo do Studio</h2>
+    <ul>
+        <li>Agendamentos Hoje: <span id="total-agenda">0</span></li>
+        <li>Profissionais Cadastrados: <span id="total-profissionais">0</span></li>
+    </ul>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../shared/config.js"></script>
-    <script src="script.js"></script>>
+    <script src="script.js"></script>
 </body>
 
 </html>

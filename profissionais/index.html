@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Profissionais | AURADash</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <button onclick="window.location.href='../dashboard/index.html'">← Voltar ao Dashboard</button>
+    <h1>Gestão de Profissionais (Apenas ADM)</h1>
+
+    <fieldset>
+        <legend>Novo Profissional</legend>
+        <form id="form-profissional">
+            <input type="text" id="nome" placeholder="Nome Completo" required><br><br>
+            <input type="text" id="cpf" placeholder="CPF" required><br><br>
+            <input type="text" id="cargo" placeholder="Atuação (Ex: Barbeiro, Esteticista)" required><br><br>
+
+            <label>Tipo de Contrato:</label><br>
+            <select id="tipo_contrato">
+                <option value="comissionado">Comissionado</option>
+                <option value="aluguel">Paga Aluguel</option>
+                <option value="assalariado">Assalariado</option>
+            </select><br><br>
+
+            <label>Dias de Atendimento:</label><br>
+            <div id="dias-atendimento">
+                <input type="checkbox" value="Seg"> Seg
+                <input type="checkbox" value="Ter"> Ter
+                <input type="checkbox" value="Qua"> Qua
+                <input type="checkbox" value="Qui"> Qui
+                <input type="checkbox" value="Sex"> Sex
+                <input type="checkbox" value="Sab"> Sab
+                <input type="checkbox" value="Dom"> Dom
+            </div><br>
+
+            <button type="submit">Cadastrar Profissional</button>
+        </form>
+    </fieldset>
+
+    <hr>
+
+    <h2>Lista de Profissionais</h2>
+    <table border="1" id="tabela-profissionais">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cargo</th>
+                <th>Tipo</th>
+                <th>Dias</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="corpo-tabela">
+        </tbody>
+    </table>
+
+    <script src="../shared/config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
